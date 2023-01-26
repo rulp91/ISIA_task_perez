@@ -20,8 +20,19 @@ class MatrizTest {
 
     @Test
     void sumarDosMatricesTest() {
-        Matriz m1 = new Matriz(3, 3, false);
-        Matriz m2 = new Matriz(3, 3, false);
+        try {
+            List<int[]> l1 = Arrays.asList(new int[]{1, 4, 6}, new int[]{0, 2, 5}, new int[]{0, 0, 3});
+            Matriz m1 = new Matriz(l1);
+            List<int[]> l2 = Arrays.asList(new int[]{-1, 2, 5}, new int[]{0, -1, 6}, new int[]{0, 0, -1});
+            Matriz m2 = new Matriz(l2);
+            List<int[]> l3 = Arrays.asList(new int[]{0, 6, 11}, new int[]{0, 1, 2}, new int[]{0, 0, 2});
+            Matriz m3 = new Matriz(l3);
+
+            Matriz mTest = Matriz.sumarDosMatrices(m1, m2);
+            assertEquals(m3, mTest);
+        } catch (Exception exception) {
+            assertTrue(exception.getMessage().equals("Este tipo de constructor es solo para matrices cuadradas"));
+        }
     }
 
     @Test

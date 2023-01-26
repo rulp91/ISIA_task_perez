@@ -1,10 +1,15 @@
 package es.uma.isia;
 
 
-import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.suite.api.SelectPackages;
+import org.junit.platform.suite.api.Suite;
 import org.junit.platform.testkit.engine.EngineTestKit;
 
+import static org.junit.platform.engine.discovery.DiscoverySelectors.selectClass;
+
+@SelectPackages({"es.uma.isia"})
+@Suite
 class AllTest {
 
     @Test
